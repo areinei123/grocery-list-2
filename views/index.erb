@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grocery list</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+  </head>
+
+  <body>
+    <h1>Your Grocery List</h1>
+
+    <form class="add_groceries" name="add_groceries" action="/groceries" method="post">
+      <label for="item">Missing something? Add it here:</label>
+      <input type="text" id="item"  name="item" value="<%params[:item]%>">
+
+      <input type="submit">
+    </form>
+
+    <ul>
+      <% groceries.values.each do |list_item| %>
+        <li><%= list_item[0] %></li>
+      <% end %>
+    </ul>
+    <script src="/js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="/js/groceries.js"></script>
+  </body>
+</html>
