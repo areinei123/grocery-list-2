@@ -26,6 +26,6 @@ post '/groceries' do
     conn.exec_params("INSERT INTO groceries_list
                       (list_item)
                       VALUES ($1)", [params[:item]])
-    redirect '/groceries'
   end
+  redirect '/groceries'
 end
